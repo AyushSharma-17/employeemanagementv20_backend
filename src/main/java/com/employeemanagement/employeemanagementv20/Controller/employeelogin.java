@@ -17,11 +17,7 @@ import com.employeemanagement.employeemanagementv20.entity.employee;
 public class employeelogin {
     @Autowired
     private employeeRepo employeerepo;
-
-  
-   
-
-
+         // Login endpoint
   @PostMapping("/login")
   public String login(@RequestBody employee employees) {
     String username = employees.getEmployeename();
@@ -34,8 +30,15 @@ public class employeelogin {
     } else {
       return "Username and password must not be null";
     }
+ 
   }
+
+        //get all employeename,designature,department
+
+
+
 }
+    
 
 
   

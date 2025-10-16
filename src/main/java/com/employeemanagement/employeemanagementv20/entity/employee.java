@@ -22,4 +22,6 @@ public class employee {
   private Long id;
   private String employeename;
   private String password;
+  private String designature;
+  private String department;
 }
