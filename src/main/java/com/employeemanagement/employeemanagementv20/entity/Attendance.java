@@ -17,7 +17,7 @@ public class Attendance {
 
     @ManyToOne
     @JoinColumn(name="employeeId")
-    private employee employee;
+    private employee employees;
 
     private LocalDate date;
     private LocalTime checkInTime;

@@ -2,7 +2,6 @@ package com.employeemanagement.employeemanagementv20.entity;
 
 import java.time.LocalDate;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,16 +10,19 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class LeaveRequest {
+public class Salary {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long leaveId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long salaryId;
 
     @ManyToOne
-    @JoinColumn(name="employeeId")
+    @JoinColumn(name = "employeeId")
     private employee employees;
-    private LocalDate startDate;
-    private LocalDate endDate;
-    private String leaveType;
-    private String status; // e.g., Pending, Approved, Rejected
+
+    private Double baseSalary;
+    private Double bonus;
+    private Double deductions;
+    private LocalDate payDate;
+    private String paymentStatus;
+
 }
