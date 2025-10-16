@@ -11,22 +11,16 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Task {
-    
+public class LeaveRequest {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long taskId;
+    private Long leaveId;
 
     @ManyToOne
-    @JoinColumn(name="assignedTo")
-    private employee assignedTo;
-
-    @ManyToOne
-    @JoinColumn(name="assignedBy")
-    private employee assignedBy;
-
-    private String title;
-    private String description;
-    private LocalDate dueDate;
-    private String status; // e.g., Pending, In Progress, Completed 
+    @JoinColumn(name="employeeId")
+    private employee employee;
+    private LocalDate startDate;
+    private LocalDate endDate;
+    private String leaveType;
+    private String status; // e.g., Pending, Approved, Rejected
 }
