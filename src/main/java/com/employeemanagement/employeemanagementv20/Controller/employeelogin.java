@@ -15,23 +15,23 @@ import com.employeemanagement.employeemanagementv20.entity.employee;
 @RequestMapping("/api")
 @CrossOrigin (origins="*")
 public class employeelogin {
-    // @Autowired
-    // private employeeRepo employeerepo;
-         // Login endpoint
-  // @PostMapping("/login")
-  //  public String login(@RequestBody employee employees) {
-    // String username = employees.getEmployeename();
-    // String password = employees.getPassword();
+     @Autowired
+     private employeeRepo employeerepo;
+          //Login endpoint
+   @PostMapping("/login")
+    public String login(@RequestBody employee employees) {
+     String username = employees.getEmployeename();
+     String password = employees.getPassword();
 
-    // if (username != null && password != null) {
-      // return employeerepo.findByEmployeenameAndPassword(username, password)
-          // .map(e -> "Login successful")
-          // .orElse("Invalid credentials");
-    // } else {
-      // return "Username and password must not be null";
-    // }
+     if (username != null && password != null) {
+       return employeerepo.findByEmployeenameAndPassword(username, password)
+           .map(e -> "Login successful")
+           .orElse("Invalid credentials");
+     } else {
+       return "Username and password must not be null";
+    }
  
-  // }
+  }
 
         //get all employeename,designature,department
 
